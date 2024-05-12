@@ -37,6 +37,8 @@ jq -n \
     | map({"key": .[0], "value": .[1]})
     | from_entries
   )' | jq '{"frontendModules": .}' > "$working_dir/spa-assemble-config.json"
+
+echo "$working_dir/spa-assemble-config.json"
 echo "Created dynamic spa-assemble-config.json"
 
 echo "Copying Docker configuration..."
