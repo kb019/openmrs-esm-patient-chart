@@ -20,6 +20,7 @@ do
   # run yarn pack for our app and add it to the working directory
   yarn workspace "$app" pack -o "$working_dir/$app_name.tgz" >/dev/null;
 done;
+echo ${app_names[@]}
 echo "Created packed app archives"
 
 echo "Creating dynamic spa-assemble-config.json..."
