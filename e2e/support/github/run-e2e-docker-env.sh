@@ -7,6 +7,7 @@ working_dir=$(mktemp -d "${TMPDIR:-/tmp/}openmrs-e2e-frontends.XXXXXXXXXX")
 # get a list of all the apps in this workspace
 apps=$(yarn workspaces list --json | jq -r 'if ((.location == ".") or (.location | test("form-engine-app")) or (.location | test("-app") | not)) then halt else .name end')
 # this array will hold all of the packed app names
+jq "." "$apps"
 app_names=()
 
 echo "Creating packed archives of apps..."
